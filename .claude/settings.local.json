@@ -1,0 +1,42 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pnpm dlx nuxi@latest init portofcode-temp --packageManager pnpm --gitInit false)",
+      "Bash(where.exe pnpm)",
+      "Bash(where.exe npm)",
+      "Bash(where.exe node)",
+      "Bash(echo \"PATH: $PATH\")",
+      "Bash(node --version)",
+      "Bash(npm --version)",
+      "Bash(npm install -g pnpm)",
+      "Bash(pnpm --version)",
+      "Bash(npx nuxi@latest init portofcode-temp --packageManager pnpm --gitInit false)",
+      "Bash(npx nuxi@latest init portofcode-temp --template minimal --packageManager pnpm --gitInit false)",
+      "Bash(pnpm add @nuxt/content @nuxtjs/tailwindcss @nuxtjs/google-fonts)",
+      "Bash(pnpm approve-builds esbuild @parcel/watcher)",
+      "Bash(node -e \":*)",
+      "Bash(pnpm install)",
+      "Bash(pnpm add better-sqlite3)",
+      "Bash(npx nuxt prepare)",
+      "Bash(pnpm run generate)",
+      "Bash(pnpm rebuild better-sqlite3)",
+      "Bash(timeout 15 pnpm run dev)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(ls /c/Users/faugh/Projects/PortofCode/node_modules/.bin/nuxt*)",
+      "Bash(node -e \"console.log\\(require.resolve\\(''@nuxt/cli/dist/cli.mjs'', {paths: [''C:\\\\\\\\Users\\\\\\\\faugh\\\\\\\\Projects\\\\\\\\PortofCode'']}\\)\\)\")",
+      "Bash(node -e \"console.log\\(require.resolve\\(''nuxt/bin/nuxt.mjs'', {paths: [''C:\\\\\\\\Users\\\\\\\\faugh\\\\\\\\Projects\\\\\\\\PortofCode'']}\\)\\)\")",
+      "Bash(npx nuxt dev --port 3000)",
+      "Bash(ls /c/Users/faugh/Projects/PortofCode/node_modules/.pnpm/@nuxt+cli*/node_modules/@nuxt/cli/dist/)",
+      "Bash(ls /c/Users/faugh/Projects/PortofCode/node_modules/.pnpm/@nuxt+cli*/node_modules/@nuxt/cli/bin/)",
+      "Bash(realpath /c/Users/faugh/Projects/PortofCode/node_modules/.pnpm/@nuxt+cli*/node_modules/@nuxt/cli/bin/nuxi.mjs)",
+      "Bash(pnpm add @nuxtjs/sitemap lucide-vue-next)",
+      "Bash(pnpm run dev)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:content.nuxt.com)",
+      "WebFetch(domain:www.answeroverflow.com)",
+      "Bash(lsof -i :3000)",
+      "Bash(netstat -ano)",
+      "Bash(taskkill //PID 27928 //F)"
+    ]
+  }
+}

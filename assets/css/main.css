@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-dark text-offwhite font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+
+  a {
+    @apply text-cyan transition-colors hover:text-cyan/80;
+  }
+
+  code {
+    @apply font-code;
+  }
+
+  /* Scrollbar styling */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: theme('colors.steel') transparent;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: theme('colors.steel');
+    border-radius: 4px;
+  }
+}
+
+/* Prose overrides for Nuxt Content rendered markdown */
+@layer components {
+  .prose {
+    @apply text-offwhite max-w-prose mx-auto;
+  }
+
+  .prose h1 {
+    @apply text-3xl font-bold text-offwhite mt-10 mb-4;
+  }
+
+  .prose h2 {
+    @apply text-2xl font-bold text-offwhite mt-8 mb-3 border-b border-steel/20 pb-2;
+  }
+
+  .prose h3 {
+    @apply text-xl font-bold text-offwhite mt-6 mb-2;
+  }
+
+  .prose p {
+    @apply text-offwhite/90 leading-relaxed mb-4;
+  }
+
+  .prose a {
+    @apply text-cyan underline decoration-cyan/30 hover:decoration-cyan transition-colors;
+  }
+
+  .prose strong {
+    @apply text-offwhite font-semibold;
+  }
+
+  .prose ul, .prose ol {
+    @apply mb-4 pl-6;
+  }
+
+  .prose ul {
+    @apply list-disc;
+  }
+
+  .prose ol {
+    @apply list-decimal;
+  }
+
+  .prose li {
+    @apply text-offwhite/90 mb-1;
+  }
+
+  .prose blockquote {
+    @apply border-l-4 border-orange pl-4 italic text-muted my-4;
+  }
+
+  .prose hr {
+    @apply border-steel/20 my-8;
+  }
+
+  /* Inline code */
+  .prose code:not(pre code) {
+    @apply bg-darkcard text-cyan px-1.5 py-0.5 rounded text-sm;
+  }
+
+  /* Code blocks */
+  .prose pre {
+    @apply bg-darkcard border border-steel/20 rounded-lg p-4 my-4 overflow-x-auto text-sm leading-relaxed;
+  }
+
+  .prose pre code {
+    @apply bg-transparent p-0 text-offwhite/90;
+  }
+
+  .prose img {
+    @apply rounded-lg my-6;
+  }
+
+  .prose table {
+    @apply w-full my-4 text-sm;
+  }
+
+  .prose th {
+    @apply text-left font-heading text-offwhite border-b border-steel/30 pb-2 pr-4;
+  }
+
+  .prose td {
+    @apply text-offwhite/90 border-b border-steel/10 py-2 pr-4;
+  }
+}
