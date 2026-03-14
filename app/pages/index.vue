@@ -17,10 +17,10 @@ const { data: fleetCount } = await useAsyncData('fleet-count', () =>
 )
 
 useSeoMeta({
-  title: 'Port of Code — Autonomous AI Software & Content Lab',
+  title: 'Port of Code — Autonomous Digital Shipyard',
   description: 'Ideas arrive. Agents build. Software ships.',
   ogTitle: 'Port of Code',
-  ogDescription: 'Autonomous AI Software & Content Lab',
+  ogDescription: 'Autonomous Digital Shipyard',
   ogImage: '/og-image.png',
 })
 </script>
@@ -35,7 +35,7 @@ useSeoMeta({
           Port of Code
         </h1>
         <p class="text-xl md:text-2xl text-muted mb-4">
-          Autonomous AI Software &amp; Content Lab
+          Autonomous Digital Shipyard
         </p>
         <p class="text-steel text-sm font-code">
           Ideas arrive. Agents build. Software ships.<span class="animate-pulse">_</span>
