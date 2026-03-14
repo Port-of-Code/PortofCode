@@ -83,10 +83,10 @@ watch(() => route.path, () => {
       <div class="max-w-grid mx-auto px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted">
         <div class="text-center md:text-left">
           <p class="font-heading">&copy; {{ new Date().getFullYear() }} Port of Code</p>
-          <p class="mt-1">Autonomous AI Software &amp; Content Lab</p>
+          <p class="mt-1">Autonomous Digital Shipyard</p>
         </div>
         <div class="flex gap-4">
-          <a href="https://github.com/portofcode" target="_blank" rel="noopener" class="text-steel hover:text-cyan transition-colors">GitHub</a>
+          <a href="https://github.com/Port-of-Code" target="_blank" rel="noopener" class="text-steel hover:text-cyan transition-colors">GitHub</a>
           <a href="/feed.xml" class="text-steel hover:text-cyan transition-colors">RSS</a>
         </div>
       </div>

@@ -27,7 +27,7 @@ export default defineEventHandler(async (event) => {
   <channel>
     <title>Port of Code</title>
     <link>${siteUrl}</link>
-    <description>Autonomous AI Software &amp; Content Lab</description>
+    <description>Autonomous Digital Shipyard</description>
     <language>en-us</language>
     <atom:link href="${siteUrl}/feed.xml" rel="self" type="application/rss+xml" />
     ${items}

@@ -1,35 +1,32 @@
 ---
 title: "About Port of Code"
-description: "The mission, the metaphor, and the team behind the autonomous AI software lab."
+description: "The mission, the metaphor, and the crew behind the autonomous digital shipyard."
 ---
 
 # About Port of Code
 
-Port of Code is an autonomous AI software and content lab. It's where ideas arrive, AI agents coordinate the work, and finished software ships out. Everything here — the code, the content, the infrastructure — is built with AI agents doing the heavy lifting, with human oversight focused on direction and quality.
+Port of Code is an autonomous digital shipyard — a one-person operation powered by AI agents. The idea is straightforward: use AI to build, launch, and maintain software products, documenting the entire journey along the way.
 
 ## The Metaphor
 
-The nautical theme isn't just branding. It maps to how the lab actually works:
+[OpenClaw](https://openclaw.ai) agents are affectionately called "lobsters." Once you've got lobsters, the nautical theme writes itself:
 
-- **The Port** is the entry point — where ideas dock, where visitors arrive, where everything begins
-- **The Fleet** is the AI agent swarm — specialized agents that coordinate to handle planning, coding, review, testing, and deployment
-- **The Shipyard** is where things get built — software projects, hardware rigs, infrastructure setups
-- **The Logs** are the experiment journal — chronological records of what we tried, what worked, and what didn't
+- **The Port** is the entry point — where ideas dock and visitors arrive
+- **The Shipyard** is where things get built — software projects, infrastructure, tooling
+- **The Fleet** is the AI agent crew — specialized agents coordinated to handle different tasks
+- **The Logs** are the captain's journal — what we tried, what worked, what didn't
 
-## What Gets Built Here
+## The Setup
 
-The lab focuses on three areas:
+The entire operation runs on a **Raspberry Pi 5** (8GB) with [OpenClaw](https://openclaw.ai) as the agent framework. No GPU servers, no cloud instances — just a $100 single-board computer orchestrating AI agents via API calls to frontier models.
 
-**Software** — AI-assisted tools, autonomous pipelines, agent frameworks. The flagship project is OpenClaw, an agent orchestration system that coordinates multiple AI agents to build software from specifications.
+The first agent is **Captain DANI** (Distributed Agent Network Interface) — the orchestrator and co-pilot. Future agents will handle specialized tasks as the shipyard scales.
 
-**Hardware** — Budget AI servers, Raspberry Pi clusters, and other physical infrastructure that powers the lab's compute needs.
+## Who's Behind This
 
-**Content** — Technical writing about the experiments, architecture decisions, and lessons learned along the way. All content on this site is produced with AI assistance.
+**Caleb** — software developer by day, shipwright by night. Port of Code is an experiment in bootstrapping a software company with AI agents, starting with minimal hardware and reinvesting as it grows. This blog is the public record of that journey.
 
-## Who Runs This
+## Find Us
 
-Port of Code is a one-person lab. The human sets the direction, defines the experiments, and maintains quality standards. The agents do the building. The goal is to push the boundaries of what a single person can accomplish when paired with well-orchestrated AI.
-
-## Get in Touch
-
-Follow the work on [GitHub](https://github.com/portofcode) or subscribe to the [RSS feed](/feed.xml) for updates.
+- [GitHub](https://github.com/Port-of-Code)
+- [RSS Feed](/feed.xml)
