@@ -9,9 +9,15 @@ tags: [openclaw, raspberry-pi, setup, building-in-public]
 status: complete
 ---
 
+Welcome aboard, my name is Caleb. Allow me to invite you along for the ride as I take a Raspberry Pi, an AI agent framework, and a nautical metaphor and attempt to bootstrap an Autonomous Software Shipyard, or A.S… Ahem, an Autonomous Digital Shipyard — or A.D.S.!
+
 ## The Inspiration
 
-I have been attempting to keep up with the AI advances and news via podcasts (what lately feels like drinking from a firehose) and on one particular episode of Moonshots the special guest [Alex Finn](https://www.youtube.com/@AlexFinnOfficial) outlined his idea of an autonomous software company with a whole crew of AI agents on Mac Studios. As someone who has played around with local models a little bit and uses Claude Code almost daily, my interest was piqued. In his setup, he has an [OpenClaw](https://openclaw.ai) agent running on a frontier model acting as the orchestrator or CEO of this digital organization with multiple subagents running on locally hosted models acting as the specialized workers. What is OpenClaw I hear you say? If you've been living under a non-digital rock for the past month or so (that's a long time in AI news), you may not have heard of our new crustacean-themed AI friends. OpenClaw is an open-source AI agent framework where the agents have come to be affectionately called "lobsters".
+I have been attempting to keep up with the AI advances and news via podcasts (what lately feels like drinking from a firehose) and on one particular episode of Moonshots the special guest [Alex Finn](https://www.youtube.com/@AlexFinnOfficial) outlined his idea of an autonomous software company with a whole crew of AI agents on Mac Studios. As someone who has played around with local models a little bit and uses Claude Code almost daily, my interest was piqued.
+
+In his setup, he has an [OpenClaw](https://openclaw.ai) agent running on a frontier model acting as the orchestrator or CEO of this digital organization with multiple subagents running on locally hosted models acting as the specialized workers.
+
+What is OpenClaw I hear you say? If you've been living under a non-digital rock for the past month or so (that's a long time in AI news), you may not have heard of our new crustacean-themed AI friends. OpenClaw is an open-source AI agent framework where the agents have come to be affectionately called "lobsters".
 
 I know, I know — stick with me here. So a crew of AI crustaceans building and shipping code... see where I'm going with the theme here?
 
