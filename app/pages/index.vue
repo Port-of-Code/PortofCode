@@ -72,14 +72,14 @@ useSeoMeta({
       <div class="grid gap-6 md:grid-cols-2">
         <NuxtLink to="/shipyard" class="group bg-darkcard border border-steel/20 rounded-lg p-8 hover:border-orange/40 transition-all">
           <Ship :size="28" class="text-orange mb-4" />
-          <h3 class="text-xl font-heading font-bold mb-2 group-hover:text-orange transition-colors">Shipyard</h3>
+          <h3 class="text-xl font-heading font-bold mb-2 text-orange transition-colors">Shipyard</h3>
           <p class="text-muted text-sm mb-4">Where projects are designed, built, and launched — software, hardware, infrastructure.</p>
           <span class="text-xs font-code text-steel">{{ shipyardCount || 0 }} {{ shipyardCount === 1 ? 'project' : 'projects' }}</span>
         </NuxtLink>
 
         <NuxtLink to="/fleet" class="group bg-darkcard border border-steel/20 rounded-lg p-8 hover:border-cyan/40 transition-all">
           <Cpu :size="28" class="text-cyan mb-4" />
-          <h3 class="text-xl font-heading font-bold mb-2 group-hover:text-cyan transition-colors">Fleet</h3>
+          <h3 class="text-xl font-heading font-bold mb-2 text-cyan transition-colors">Fleet</h3>
           <p class="text-muted text-sm mb-4">AI agent swarm — architecture and coordination of autonomous agents.</p>
           <span class="text-xs font-code text-steel">{{ fleetCount || 0 }} {{ fleetCount === 1 ? 'post' : 'posts' }}</span>
         </NuxtLink>
