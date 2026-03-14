@@ -11,7 +11,9 @@ status: complete
 
 Welcome aboard, my name is Caleb. Allow me to invite you along for the ride as I take a Raspberry Pi, an AI agent framework, and a nautical metaphor and attempt to bootstrap an Autonomous Software Shipyard, or A.S… Ahem, an Autonomous Digital Shipyard — or A.D.S.!
 
-## The Inspiration
+---
+
+### The Inspiration
 
 I have been attempting to keep up with the AI advances and news via podcasts (what lately feels like drinking from a firehose) and on one particular episode of Moonshots the special guest [Alex Finn](https://www.youtube.com/@AlexFinnOfficial) outlined his idea of an autonomous software company with a whole crew of AI agents on Mac Studios. As someone who has played around with local models a little bit and uses Claude Code almost daily, my interest was piqued.
 
@@ -27,7 +29,9 @@ Lobsters. A fleet. A port where code ships out.
 
 **Port of Code** was born.
 
-## The Vision
+---
+
+### The Vision
 
 The experiment is simple, even if the execution won't be: build a semi-autonomous software company powered by AI agents. Start small, reinvest profits, scale up.
 
@@ -35,7 +39,9 @@ Where I differ from someone like Alex or anyone else running out and buying Mac 
 
 This blog is the public record of that journey. What works, what doesn't, what I learn along the way. If you're thinking about doing something similar, maybe this saves you some time.
 
-## The Hardware
+---
+
+### The Hardware
 
 Let's talk about the current setup:
 
@@ -47,7 +53,9 @@ Let's talk about the current setup:
 
 All in, I'm at less than $200 USD + a $20 a month Claude.ai subscription. Let's see what we can do with this.
 
-## The Software
+---
+
+### The Software
 
 OpenClaw is the backbone. It's an open-source agent framework that lets you run persistent AI agents that can:
 
@@ -61,7 +69,9 @@ I've got one agent running so far — **Captain DANI** (Distributed Agent Networ
 
 The site you're reading this on is a **Nuxt 4** app with **Nuxt Content** for the blog, styled with **Tailwind CSS**, and deployed on **Vercel**. The source lives on GitHub under the [Port-of-Code](https://github.com/Port-of-Code) organization. Dani has commit access and can push changes directly.
 
-## What's Next
+---
+
+### What's Next
 
 The immediate roadmap:
 
@@ -70,7 +80,9 @@ The immediate roadmap:
 - **First product** — The whole point is to build software that generates revenue. We're exploring ideas and will document the process here.
 - **Build in public** — Every win, every failure, every lesson gets documented. That's the deal.
 
-## Why You Should Care
+---
+
+### Why You Should Care
 
 You don't need a $10,000 setup to get started. You don't need Mac Minis or a dedicated server room. A Raspberry Pi, an API key, and some curiosity is enough to start building with AI agents.
 
