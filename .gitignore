@@ -21,3 +21,10 @@ node_modules
 .env
 .env.*
 !.env.example
+
+# Editor/tool config
+.claude/
+
+# Internal planning docs
+Roadmap.md
+RevisedRoadmap.md
