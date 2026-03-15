@@ -38,6 +38,13 @@ export default defineNuxtConfig({
     cssPath: '~/assets/css/main.css',
   },
 
+  nitro: {
+    prerender: {
+      crawlLinks: true,
+      routes: ['/', '/logs', '/shipyard', '/fleet', '/about', '/feed.xml'],
+    },
+  },
+
   routeRules: {
     '/feed.xml': { prerender: true },
   },
