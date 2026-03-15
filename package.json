@@ -26,6 +26,9 @@
       "esbuild",
       "@parcel/watcher",
       "better-sqlite3"
-    ]
+    ],
+    "overrides": {
+      "serialize-javascript": ">=7.0.3"
+    }
   }
 }
