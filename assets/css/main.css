@@ -55,11 +55,11 @@
   }
 
   .prose h3 {
-    @apply text-xl font-bold text-offwhite mt-6 mb-2;
+    @apply text-xl font-bold text-cyan mt-10 mb-4;
   }
 
   .prose p {
-    @apply text-offwhite/90 leading-relaxed mb-4;
+    @apply text-offwhite/90 leading-relaxed mb-6;
   }
 
   .prose a {
@@ -71,7 +71,7 @@
   }
 
   .prose ul, .prose ol {
-    @apply mb-4 pl-6;
+    @apply mb-6 pl-6;
   }
 
   .prose ul {
@@ -83,7 +83,7 @@
   }
 
   .prose li {
-    @apply text-offwhite/90 mb-1;
+    @apply text-offwhite/90 mb-2;
   }
 
   .prose blockquote {
@@ -91,7 +91,7 @@
   }
 
   .prose hr {
-    @apply border-steel/20 my-8;
+    @apply border-steel/20 my-10;
   }
 
   /* Inline code */
