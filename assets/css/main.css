@@ -40,59 +40,46 @@
   }
 }
 
-/* Prose overrides for Nuxt Content rendered markdown
-   Intentionally NOT in @layer so they have higher specificity
-   than Nuxt Content's default prose component styles */
+/* Dark theme overrides for Tailwind Typography prose */
 .prose {
-  @apply text-offwhite max-w-prose mx-auto;
+  --tw-prose-body: theme('colors.offwhite / 90%');
+  --tw-prose-headings: theme('colors.offwhite');
+  --tw-prose-links: theme('colors.cyan');
+  --tw-prose-bold: theme('colors.offwhite');
+  --tw-prose-bullets: theme('colors.steel');
+  --tw-prose-counters: theme('colors.steel');
+  --tw-prose-hr: theme('colors.steel / 20%');
+  --tw-prose-quotes: theme('colors.muted');
+  --tw-prose-quote-borders: theme('colors.orange');
+  --tw-prose-code: theme('colors.cyan');
+  --tw-prose-pre-bg: theme('colors.darkcard');
+  --tw-prose-pre-code: theme('colors.offwhite / 90%');
+  --tw-prose-th-borders: theme('colors.steel / 30%');
+  --tw-prose-td-borders: theme('colors.steel / 10%');
 }
 
-.prose h1 {
-  @apply text-3xl font-bold text-offwhite mt-10 mb-4;
+.prose {
+  @apply max-w-prose mx-auto;
 }
 
-.prose h2 {
-  @apply text-2xl font-bold text-offwhite mt-8 mb-3 border-b border-steel/20 pb-2;
-}
-
+/* Heading overrides */
 .prose h3 {
-  @apply text-xl font-bold text-cyan mt-10 mb-4;
+  @apply text-cyan;
 }
 
-.prose p {
-  @apply text-offwhite/90 leading-relaxed mb-6;
-}
-
+/* Link styling */
 .prose a {
   @apply text-cyan underline decoration-cyan/30 hover:decoration-cyan transition-colors;
 }
 
-.prose strong {
-  @apply text-offwhite font-semibold;
-}
-
-.prose ul, .prose ol {
-  @apply mb-6 pl-6;
-}
-
-.prose ul {
-  @apply list-disc;
-}
-
-.prose ol {
-  @apply list-decimal;
-}
-
-.prose li {
-  @apply text-offwhite/90 mb-2;
-}
-
-.prose blockquote {
-  @apply border-l-4 border-orange pl-4 italic text-muted my-4;
-}
-
+/* Horizontal rules - more breathing room */
 .prose hr {
-  @apply border-steel/20 my-10;
+  @apply my-10;
+}
+
+/* Blockquote accent */
+.prose blockquote {
+  @apply border-l-orange;
 }
 
 /* Inline code */
@@ -102,25 +89,9 @@
 
 /* Code blocks */
 .prose pre {
-  @apply bg-darkcard border border-steel/20 rounded-lg p-4 my-4 overflow-x-auto text-sm leading-relaxed;
-}
-
-.prose pre code {
-  @apply bg-transparent p-0 text-offwhite/90;
+  @apply bg-darkcard border border-steel/20 rounded-lg;
 }
 
 .prose img {
-  @apply rounded-lg my-6;
-}
-
-.prose table {
-  @apply w-full my-4 text-sm;
-}
-
-.prose th {
-  @apply text-left font-heading text-offwhite border-b border-steel/30 pb-2 pr-4;
-}
-
-.prose td {
-  @apply text-offwhite/90 border-b border-steel/10 py-2 pr-4;
+  @apply rounded-lg;
 }
