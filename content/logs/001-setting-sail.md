@@ -9,7 +9,7 @@ tags: [openclaw, raspberry-pi, setup, building-in-public]
 status: complete
 ---
 
-Welcome aboard, my name is Caleb. Allow me to invite you along for the ride as I take a Raspberry Pi, an AI agent framework, and a nautical metaphor and attempt to bootstrap an Autonomous Software Shipyard, or A.S… Ahem, an Autonomous Digital Shipyard — or A.D.S.!
+Welcome aboard, my name is Caleb. Allow me to invite you along for the ride as I take a Raspberry Pi, an AI agent framework, and a nautical metaphor and attempt to bootstrap an ~~Autonomous Software Shipyard - or A.S…~~ Ahem, an Autonomous Digital Shipyard — or A.D.S.!
 
 ---
 
