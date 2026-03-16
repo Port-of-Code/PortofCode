@@ -24,10 +24,15 @@ export default defineContentConfig({
       },
       schema: z.object({
         section: z.string().default('fleet'),
-        type: z.enum(['experiment-log', 'build-guide', 'architecture-report', 'launch']).default('architecture-report'),
+        type: z.enum(['agent', 'experiment-log', 'build-guide', 'architecture-report', 'launch']).default('architecture-report'),
         tags: z.array(z.string()).default([]),
-        status: z.enum(['active', 'complete', 'archived']).default('active'),
+        status: z.enum(['active', 'standby', 'offline', 'complete', 'archived']).default('active'),
         date: z.string(),
+        // Agent-specific fields
+        designation: z.string().optional(),
+        role: z.string().optional(),
+        model: z.string().optional(),
+        platform: z.string().optional(),
       }),
     }),
     logs: defineCollection({

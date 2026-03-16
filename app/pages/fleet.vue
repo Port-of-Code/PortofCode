@@ -5,11 +5,14 @@ const { data: posts } = await useAsyncData('fleet-posts', () =>
     .all()
 )
 
+const agents = computed(() => posts.value?.filter(p => p.type === 'agent') || [])
+const articles = computed(() => posts.value?.filter(p => p.type !== 'agent') || [])
+
 useSeoMeta({
   title: 'Fleet | Port of Code',
-  description: 'AI agent swarm — architecture and coordination of autonomous agents.',
+  description: 'The AI agent crew — meet the agents that build, ship, and maintain software at Port of Code.',
   ogTitle: 'Fleet | Port of Code',
-  ogDescription: 'AI agent swarm — architecture and coordination of autonomous agents.',
+  ogDescription: 'The AI agent crew powering the autonomous digital shipyard.',
   ogImage: '/og-image.png',
 })
 </script>
@@ -18,25 +21,49 @@ useSeoMeta({
   <div class="max-w-grid mx-auto px-6 py-16">
     <div class="mb-12">
       <h1 class="text-3xl md:text-4xl font-bold mb-3">Fleet</h1>
-      <p class="text-lg text-muted">AI agent swarm — architecture and coordination of autonomous agents.</p>
+      <p class="text-lg text-muted">The AI agent crew powering the autonomous digital shipyard.</p>
     </div>
 
-    <div v-if="posts?.length" class="grid gap-6 md:grid-cols-2">
-      <PostCard
-        v-for="post in posts"
-        :key="post.path"
-        :title="post.title"
-        :description="post.description"
-        :path="post.path"
-        :date="post.date"
-        :section="post.section"
-        :status="post.status"
-        :tags="post.tags"
-      />
+    <!-- Active Agents -->
+    <div v-if="agents.length" class="mb-16">
+      <h2 class="text-xl font-heading font-bold text-cyan mb-6">Active Agents</h2>
+      <div class="grid gap-6 md:grid-cols-2">
+        <AgentCard
+          v-for="agent in agents"
+          :key="agent.path"
+          :name="agent.title"
+          :designation="agent.designation || ''"
+          :description="agent.description"
+          :path="agent.path"
+          :role="agent.role || ''"
+          :model="agent.model || ''"
+          :platform="agent.platform || ''"
+          :status="agent.status || 'active'"
+          :tags="agent.tags"
+        />
+      </div>
     </div>
 
-    <div v-else class="border border-steel/20 rounded-lg p-8 text-center text-steel">
-      <p class="font-code text-sm">No posts yet. Content coming soon.</p>
+    <!-- Fleet Articles -->
+    <div v-if="articles.length">
+      <h2 class="text-xl font-heading font-bold text-offwhite mb-6">Fleet Docs</h2>
+      <div class="grid gap-6 md:grid-cols-2">
+        <PostCard
+          v-for="post in articles"
+          :key="post.path"
+          :title="post.title"
+          :description="post.description"
+          :path="post.path"
+          :date="post.date"
+          :section="post.section"
+          :status="post.status"
+          :tags="post.tags"
+        />
+      </div>
+    </div>
+
+    <div v-if="!posts?.length" class="border border-steel/20 rounded-lg p-8 text-center text-steel">
+      <p class="font-code text-sm">No agents deployed yet. Fleet incoming.</p>
     </div>
   </div>
 </template>
