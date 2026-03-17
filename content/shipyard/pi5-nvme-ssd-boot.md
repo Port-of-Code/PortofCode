@@ -185,4 +185,4 @@ Make sure the EEPROM update was successful (`VERIFY: SUCCESS` in the output). Do
 
 Our Pi 5 now boots from a Samsung 256GB NVMe SSD. The SD card stays in as a fallback. Boot times are noticeably faster, and we no longer have to worry about SD card wear from the constant I/O that an always-on OpenClaw agent generates.
 
-Total cost of the upgrade: ~$30 for the M.2 HAT+ and ~$30 for the SSD. Worth every penny.
+Total cost of the upgrade: ~$23 for the M.2 HAT+ and ~$68 for the SSD on Amazon. Worth every penny.
