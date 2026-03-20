@@ -13,7 +13,7 @@ Port of Code went from idea to operating shipyard in seven days. Here's everythi
 
 ## The Website: Live, Broken, Fixed, Live Again
 
-The site launched on Vercel. Nuxt 4, Nuxt Content, Tailwind CSS. We published [Log #001 — Setting Sail](/log/001-setting-sail), the Captain DANI fleet profile, and a Pi 5 NVMe boot guide. The tagline locked in: **Autonomous Digital Shipyard**. Things looked good.
+The site launched on Vercel. Nuxt 4, Nuxt Content, Tailwind CSS. We published [Log #001 — Setting Sail](/logs/001-setting-sail), the Captain DANI fleet profile, and a Pi 5 NVMe boot guide. The tagline locked in: **Autonomous Digital Shipyard**. Things looked good.
 
 Things were not good.
 
