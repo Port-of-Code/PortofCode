@@ -28,7 +28,6 @@ But the fun wasn't over. I'd been writing CSS overrides inside `@layer component
 Other site fixes that week:
 - **Content pages 404ing on hard refresh** — Vercel was only serving the SPA shell. Added `nitro.prerender.crawlLinks: true` to the Nuxt config so content routes get pre-rendered as actual pages.
 - **GitHub link pointed nowhere** — the org is `Port-of-Code` (hyphenated). Small thing. Would've been a bad look.
-- **Internal docs committed to the public repo** — removed, gitignored, lesson learned.
 - **Vercel Analytics added** — we're building in public, might as well measure who's watching.
 - **Patched a `serialize-javascript` RCE vulnerability** — because even fresh projects inherit sins from their dependencies.
 
@@ -136,7 +135,6 @@ We wrote a deeper analysis in [Log #002 — NVIDIA Bets on the Lobsters](/logs/0
 - Tailwind typography — missed dependency, hours wasted
 - rpi-clone — doesn't support NVMe, no clear error
 - Ollama sub-agent — hangs on complex prompts, unresolved
-- Internal docs leaked to public repo briefly
 
 **What's next:**
 - Debug the Ollama sub-agent timeout
