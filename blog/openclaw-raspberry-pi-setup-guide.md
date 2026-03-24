@@ -37,7 +37,7 @@ Here's what we're running:
 | Power | Official 27W USB-C PSU | Official Pi power supply |
 | Network | Ethernet | Ethernet or WiFi |
 
-**We strongly recommend NVMe SSD boot.** MicroSD cards are slow and wear out. An NVMe SSD via M.2 HAT+ transforms the Pi 5 into something that genuinely feels snappy. If you haven't set that up yet, follow our [Pi 5 NVMe SSD Boot Guide](/shipyard/pi5-nvme-ssd-boot) first — it's a prerequisite for the best experience.
+**We strongly recommend NVMe SSD boot.** MicroSD cards are slow and wear out. An NVMe SSD via M.2 HAT+ transforms the Pi 5 into something that genuinely feels snappy. If you haven't set that up yet, follow our [Pi 5 NVMe SSD Boot Guide](/shipyard/pi5-nvme-ssd-boot-guide) first — it's a prerequisite for the best experience.
 
 ### Software
 
@@ -54,7 +54,7 @@ If you're starting from scratch, flash Raspberry Pi OS Lite (64-bit) using the [
 - Set username and password
 - Configure WiFi if not using Ethernet
 
-If you followed our [NVMe SSD Boot Guide](/shipyard/pi5-nvme-ssd-boot), your Pi is already booted and ready. SSH in:
+If you followed our [NVMe SSD Boot Guide](/shipyard/pi5-nvme-ssd-boot-guide), your Pi is already booted and ready. SSH in:
 
 ```bash
 ssh dani@gateway-host
