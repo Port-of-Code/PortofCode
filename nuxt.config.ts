@@ -8,6 +8,7 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@nuxtjs/google-fonts',
     '@nuxtjs/sitemap',
+    '@vercel/speed-insights',
   ],
 
   ssr: true,
