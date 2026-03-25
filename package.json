@@ -32,7 +32,8 @@
       "better-sqlite3"
     ],
     "overrides": {
-      "serialize-javascript": ">=7.0.3"
+      "serialize-javascript": ">=7.0.3",
+      "nuxtseo-layer-devtools": "npm:empty-npm-package@1.0.0"
     }
   },
   "devDependencies": {
