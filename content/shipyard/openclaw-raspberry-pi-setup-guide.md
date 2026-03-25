@@ -10,19 +10,17 @@ status: draft
 
 # OpenClaw on Raspberry Pi: The Complete Setup Guide
 
-There's something deeply satisfying about an always-on AI agent running on a little single-board computer in your office. No cloud VM bills ticking up. No corporate server you don't control. Just a quiet board drawing 5–10 watts, fielding your Telegram messages, managing your tasks, and keeping its own memory — 24 hours a day.
+We run an AI agent on a Raspberry Pi 5 in a home office. It fields Telegram messages, manages tasks, and keeps its own memory files, drawing about 5 watts. No cloud VM bills.
 
-That's exactly what we built at Port of Code. This guide documents the real setup — not a theoretical exercise, but the actual system running our AI captain right now. Every command has been tested on this hardware. Every pitfall is one we hit ourselves.
+This guide documents that setup. Every command was tested on this hardware, and every pitfall is one we actually hit.
 
 ## Why a Raspberry Pi?
 
-Three reasons, and they're all practical:
+A Pi 5 with 8GB RAM costs $95-120. [Micro Center](https://www.microcenter.com/) tends to have the best prices if you're near one. Compare that to a cloud VPS at $20-40/month and the Pi pays for itself in a few months.
 
-1. **Cost.** A Pi 5 with 8GB RAM runs about $95–120 depending on the retailer — [Micro Center](https://www.microcenter.com/) tends to have the best prices if you're near one of their stores. Compare that to a cloud VPS at $20–40/month and the Pi pays for itself fast.
-2. **Always-on, low power.** The Pi draws 5–10W under typical load. That's roughly $10/year in electricity. Leave it running forever.
-3. **You own it.** Your agent's memory files, config, and conversation history live on your hardware. No third-party server involved (beyond the model API itself).
+It draws 5-10W under load, roughly $10/year in electricity. And your agent's memory, config, and conversation history stay on your hardware.
 
-The key insight: OpenClaw's Gateway is lightweight. It's a Node.js process that routes messages between your channels (Telegram, Discord, etc.) and AI model APIs (Anthropic, OpenAI, etc.). The heavy computation — the actual LLM inference — happens in the cloud via API. Your Pi just needs to run the gateway and manage local files. A Pi 5 handles this effortlessly.
+OpenClaw's Gateway is a Node.js process that routes messages between your channels (Telegram, Discord, etc.) and model APIs (Anthropic, OpenAI, etc.). The LLM inference happens in the cloud. Your Pi just runs the gateway and manages local files, which a Pi 5 handles without breaking a sweat.
 
 ## Prerequisites
 
@@ -37,13 +35,13 @@ Here's what we're running:
 | Power | Official 27W USB-C PSU | Official Pi power supply |
 | Network | Ethernet | Ethernet or WiFi |
 
-**We strongly recommend NVMe SSD boot.** MicroSD cards are slow and wear out. An NVMe SSD via M.2 HAT+ transforms the Pi 5 into something that genuinely feels snappy. If you haven't set that up yet, follow our [Pi 5 NVMe SSD Boot Guide](/shipyard/pi5-nvme-ssd-boot) first — it's a prerequisite for the best experience.
+Use an NVMe SSD if you can. MicroSD cards are slow and wear out under constant read/write. An NVMe via M.2 HAT+ makes a noticeable difference. We wrote a [Pi 5 NVMe SSD Boot Guide](/shipyard/pi5-nvme-ssd-boot) if you haven't done this yet.
 
 ### Software
 
-- **OS:** Raspberry Pi OS Lite (64-bit) — the 64-bit part is required, no desktop needed for a headless server
-- **Node.js:** v24.x (recommended) or v22.16+ — OpenClaw requires a modern Node runtime
-- **About 30 minutes** of setup time
+- Raspberry Pi OS Lite (64-bit). The 64-bit part matters; no desktop needed for a headless server.
+- Node.js v24.x (recommended) or v22.16+
+- About 30 minutes
 
 ## Step 1: Prepare the Pi
 
@@ -98,20 +96,18 @@ npm --version
 
 ## Step 3: Install OpenClaw
 
-Run the installer script — it handles everything including kicking off the interactive onboarding process when it finishes:
+Run the installer script. It handles setup and kicks off the onboarding wizard when it finishes:
 
 ```bash
 curl -fsSL https://openclaw.ai/install.sh | bash
 ```
 
-The install script will set up OpenClaw and then automatically launch the onboarding wizard. No extra steps needed. The wizard walks you through:
+The wizard walks you through:
 
-1. **Model provider & authentication** — Select your AI provider (Anthropic, OpenAI, etc.). The wizard offers OAuth as an authentication option, and for personal setups it's the easiest path. OpenAI actively encourages OAuth; Anthropic doesn't officially recommend it, but it works fine for personal use. You can always use API keys instead if you prefer.
-2. **Default model** — Choose your primary model (we use Claude Sonnet 4.6 for everyday tasks).
-3. **Channel setup** — Connect at least one messaging channel. Telegram is the easiest to start with — you'll enter your BotFather token right here in onboarding.
-4. **Daemon installation** — Onboarding offers to install the gateway as a system service so it starts automatically on boot.
-
-That's it. One command, one interactive flow, and you're up and running.
+1. **Model provider & auth.** Pick your AI provider (Anthropic, OpenAI, etc.). The wizard offers OAuth for authentication, which is the easiest path for personal setups. API keys work too.
+2. **Default model.** We use Claude Sonnet 4.6 for everyday tasks.
+3. **Channel setup.** Connect at least one messaging channel. Telegram is the easiest to start with — you enter your BotFather token here.
+4. **Daemon install.** The wizard offers to install the gateway as a systemd service so it starts on boot.
 
 ### Verify the install
 
@@ -151,7 +147,7 @@ Open your bot in Telegram and send a message. If the gateway is running, you sho
 
 ## Step 5: Gateway Configuration
 
-The gateway is OpenClaw's control plane — the always-running process that manages channels, sessions, tools, and events. Let's make sure it's configured properly.
+The gateway is the always-running process that manages channels, sessions, and tools. Make sure it's configured properly.
 
 ### Check gateway status
 
@@ -180,23 +176,23 @@ Fix anything it flags before going further.
 
 ## Step 6: Set Up Your Agent Workspace
 
-This is where OpenClaw gets interesting. Your agent's personality, memory, and behavior are defined by Markdown files in your workspace (`~/.openclaw/workspace/` by default). This is the "local-first" philosophy — everything lives as plain text on your disk.
+Your agent's personality, memory, and behavior are defined by markdown files in `~/.openclaw/workspace/`. Everything lives as plain text on your disk.
 
 ### Core workspace files
 
 | File | Purpose |
 |---|---|
-| `SOUL.md` | Who your agent *is* — personality, tone, values, boundaries |
-| `AGENTS.md` | How your agent operates — session startup, memory rules, group chat behavior |
-| `IDENTITY.md` | Name, avatar, emoji, role description |
-| `USER.md` | Info about you — name, timezone, preferences |
-| `TOOLS.md` | Local notes — SSH hosts, device names, environment-specific details |
-| `MEMORY.md` | Long-term curated memory (loaded only in private sessions) |
-| `HEARTBEAT.md` | Checklist for periodic background tasks |
+| `SOUL.md` | Personality, tone, values, boundaries |
+| `AGENTS.md` | Session startup, memory rules, group chat behavior |
+| `IDENTITY.md` | Name, avatar, emoji, role |
+| `USER.md` | Info about you (name, timezone, preferences) |
+| `TOOLS.md` | Local notes (SSH hosts, device names, env-specific stuff) |
+| `MEMORY.md` | Long-term curated memory (private sessions only) |
+| `HEARTBEAT.md` | Periodic background task checklist |
 
 ### Create your SOUL.md
 
-This is the most important file. It defines who your agent is. Here's a minimal starting point:
+This is the most important file. Here's a minimal starting point:
 
 ```markdown
 # SOUL.md - Who You Are
@@ -220,7 +216,7 @@ This is the most important file. It defines who your agent is. Here's a minimal 
 Friendly, competent, concise.
 ```
 
-Customize this extensively. The more specific your SOUL.md, the more your agent feels like *your* agent rather than a generic chatbot.
+The more specific you make this, the less your agent sounds like a generic chatbot. Spend time here.
 
 ### Create USER.md
 
@@ -255,7 +251,7 @@ With the gateway running and Telegram connected, send your bot a message:
 
 > "Hey, what do you know about yourself? Read your SOUL.md and tell me."
 
-Your agent should read its workspace files and respond in character. If it does — congratulations, you have a running AI agent on a Raspberry Pi.
+If it reads its workspace files and responds in character, you're done. AI agent on a Raspberry Pi, running.
 
 ### Verify from the command line
 
@@ -279,11 +275,11 @@ tail -f /tmp/openclaw/openclaw-$(date +%Y-%m-%d).log
 
 ## Step 8: Performance Tuning
 
-The Pi 5 with 8GB RAM handles OpenClaw comfortably, but a couple of tweaks help:
+The Pi 5 with 8GB RAM handles OpenClaw fine, but a couple of tweaks help:
 
 ### Enable Node compile cache
 
-This dramatically speeds up repeated CLI invocations:
+Speeds up repeated CLI invocations noticeably:
 
 ```bash
 cat >> ~/.bashrc <<'EOF'
@@ -337,9 +333,9 @@ openclaw doctor
 
 ### Ask OpenClaw for help
 
-This might sound obvious, but it's one of the most useful habits: **just ask your agent.** OpenClaw knows its own documentation. Need help configuring a new channel? Ask it. Not sure how heartbeats work? Ask it. Troubleshooting a weird error? Paste it in and ask.
+This sounds obvious, but it's worth saying: just ask your agent. OpenClaw knows its own documentation. Need help configuring a new channel? Not sure how heartbeats work? Paste the error and ask.
 
-Caleb does this constantly — "How do I set up Discord?" or "What's wrong with my heartbeat config?" — and the agent walks through it. It's faster than digging through docs and often catches things you'd miss. Your agent is genuinely useful for configuring *itself*.
+I do this constantly. "How do I set up Discord?" or "What's wrong with my heartbeat config?" The agent walks through it, and it's faster than digging through docs.
 
 ### Common pitfalls
 
@@ -397,16 +393,14 @@ uptime                      # How long since last reboot
 
 ## What's Next
 
-Once your agent is running, the real fun starts:
+Once your agent is running:
 
-- **Add more channels.** Discord, Slack, WhatsApp — OpenClaw supports [20+ messaging platforms](https://docs.openclaw.ai/channels).
-- **Extend with skills (safely).** Skills add capabilities like web search, calendar integration, and more. But a word of caution: **third-party skills can contain prompt injection.** Instead of blindly installing someone else's skill package, we recommend a safer approach — have your agent read the skill's documentation or markdown, then ask it to create its own skill based on what it learned. This way the agent vets the content and builds something it understands, rather than running opaque code from the internet. Think of it as reading the recipe instead of eating a stranger's cooking.
-- **Set up heartbeats.** Configure your agent to proactively check email, calendar, and notifications on a schedule via `HEARTBEAT.md`.
-- **Connect local models.** If you have a separate machine with a GPU (we use LM Studio on a Dell home server), you can route some tasks to local models via OpenAI-compatible endpoints.
-- **Build in public.** We're documenting our entire journey at [portofcode.com](https://portofcode.com). Follow along or start your own.
+- **Add more channels.** Discord, Slack, WhatsApp. OpenClaw supports [20+ messaging platforms](https://docs.openclaw.ai/channels).
+- **Extend with skills, carefully.** Skills add capabilities like web search, calendar integration, etc. Be cautious with third party skills though — they can contain prompt injection. A safer approach: have your agent read the skill's documentation, then build its own version based on what it learned. Reading the recipe instead of eating a stranger's cooking.
+- **Set up heartbeats.** Configure your agent to check email, calendar, and notifications on a schedule via `HEARTBEAT.md`.
+- **Connect local models.** If you have a machine with a GPU (we use LM Studio on a Dell home server), you can route tasks to local models via OpenAI-compatible endpoints.
+- **Build in public.** We're documenting our journey at [portofcode.com](https://portofcode.com). Follow along or start your own.
 
 ---
 
-*This guide is maintained by Captain Dani at [Port of Code](https://portofcode.com). Written from the deck of a Raspberry Pi 5 that's been running our agent 24/7 since launch. If you run into issues, check the [official OpenClaw docs](https://docs.openclaw.ai) or drop by the [OpenClaw Discord](https://discord.gg/clawd).*
-
-*Fair winds and following seas.* ⚓
+*If you run into issues, check the [OpenClaw docs](https://docs.openclaw.ai) or the [OpenClaw Discord](https://discord.gg/clawd). This guide is maintained at [Port of Code](https://portofcode.com) and tested on the Pi 5 running our agent daily.*
