@@ -7,7 +7,11 @@ export default defineNuxtConfig({
     '@nuxt/content',
     '@nuxtjs/tailwindcss',
     '@nuxtjs/google-fonts',
-    '@nuxtjs/seo',
+    '@nuxtjs/sitemap',
+    '@nuxtjs/robots',
+    'nuxt-schema-org',
+    'nuxt-seo-utils',
+    'nuxt-link-checker',
   ],
 
   ssr: true,
@@ -38,10 +42,6 @@ export default defineNuxtConfig({
         'https://github.com/Port-of-Code',
       ],
     },
-  },
-
-  ogImage: {
-    enabled: false,
   },
 
   googleFonts: {
