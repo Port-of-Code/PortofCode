@@ -8,9 +8,9 @@ tags: [raspberry-pi, nvme, ssd, hardware, guide]
 status: complete
 ---
 
-If you're running anything persistent on a Raspberry Pi — especially an always-on AI agent — you'll want to ditch the SD card sooner rather than later. SD cards aren't designed for the constant read/write cycles that a live system generates. An NVMe SSD is faster, more reliable, and not much more expensive.
+If you're running anything persistent on a Raspberry Pi, ditch the SD card. They aren't designed for constant read/write cycles. An NVMe SSD is faster, more reliable, and not much more expensive.
 
-Here's how we migrated our Pi 5 from a 128GB SD card to a 256GB Samsung NVMe SSD, including everything that went wrong and how we fixed it.
+Here's how we migrated our Pi 5 from a 128GB SD card to a 256GB Samsung NVMe SSD, including what went wrong.
 
 ---
 
@@ -183,6 +183,6 @@ Make sure the EEPROM update was successful (`VERIFY: SUCCESS` in the output). Do
 
 ### The Result
 
-Our Pi 5 now boots from a Samsung 256GB NVMe SSD. The SD card stays in as a fallback. Boot times are noticeably faster, and we no longer have to worry about SD card wear from the constant I/O that an always-on OpenClaw agent generates.
+Our Pi 5 now boots from NVMe. The SD card stays in as a fallback. Boot times are noticeably faster, and we don't have to worry about SD card wear from constant I/O anymore.
 
-Total cost of the upgrade: ~$23 for the M.2 HAT+ and ~$68 for the SSD on Amazon. Worth every penny.
+Total cost: ~$23 for the M.2 HAT+ and ~$68 for the SSD on Amazon.

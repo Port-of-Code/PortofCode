@@ -33,11 +33,11 @@ Lobsters. A fleet. A port where code ships out.
 
 ### The Vision
 
-The experiment is simple, even if the execution won't be: build a semi-autonomous software company powered by AI agents. Start small, reinvest profits, scale up.
+The experiment: build a semi-autonomous software company powered by AI agents. Start small, reinvest, scale up.
 
-Where I differ from someone like Alex or anyone else running out and buying Mac Minis, I'm starting with a simple Pi… mainly because that's what I can afford right now, and also because that's all you need to get a single OpenClaw up and running with a frontier model, really. Down the line, it might mean a Mac Mini or Mac Studio running local models. The point is to start with what you have and grow from there.
+Unlike Alex and others buying Mac Minis, I'm starting with a Pi. Partly because that's what I can afford, partly because it's genuinely all you need for a single OpenClaw agent on a frontier model. Maybe a Mac Mini or Studio comes later for local models. The point is to start with what you have.
 
-This blog is the public record of that journey. What works, what doesn't, what I learn along the way. If you're thinking about doing something similar, maybe this saves you some time.
+This blog is the public record. What works, what doesn't, what I learn. If you're thinking about doing something similar, maybe it saves you some time.
 
 ---
 
@@ -75,19 +75,17 @@ The site you're reading this on is a **Nuxt 4** app with **Nuxt Content** for th
 
 The immediate roadmap:
 
-- **Upgrade storage** — Swap the SD card for an M.2 SSD via a Pi HAT. SD cards aren't built for the kind of read/write cycles an always-on agent generates.
-- **More agents** — Dani is the captain, but every fleet needs a crew. Specialized agents for different tasks are coming.
-- **First product** — The whole point is to build software that generates revenue. We're exploring ideas and will document the process here.
-- **Build in public** — Every win, every failure, every lesson gets documented. That's the deal.
+- **Upgrade storage** — Swap the SD card for an M.2 SSD via a Pi HAT. SD cards aren't built for the read/write cycles an always-on agent generates.
+- **More agents** — Dani is the captain, but a fleet needs crew. Specialized agents for different tasks are coming.
+- **First product** — The point is to build software that generates revenue. Exploring ideas now, documenting the process here.
+- **Build in public** — Wins, failures, lessons. All of it gets documented.
 
 ---
 
 ### Why You Should Care
 
-You don't need a $10,000 setup to get started. You don't need Mac Minis or a dedicated server room. A Raspberry Pi, an API key, and some curiosity is enough to start building with AI agents.
+You don't need a $10,000 setup. A Raspberry Pi, an API key, and some curiosity gets you a running AI agent. A year ago, this wasn't possible. Today you can set it up in an afternoon.
 
-The barrier to entry for this stuff is dropping fast. A year ago, running persistent AI agents wasn't a thing. Today, you can set it up on a Pi in an afternoon. The question isn't whether the tools are ready — it's whether you're willing to jump in.
-
-That's what Port of Code is about. Setting sail with what you've got and figuring out the rest along the way.
+That's what Port of Code is about — starting with what you have and figuring out the rest along the way.
 
 Fair winds. ⚓
