@@ -7,7 +7,7 @@ export default defineNuxtConfig({
     '@nuxt/content',
     '@nuxtjs/tailwindcss',
     '@nuxtjs/google-fonts',
-    '@nuxtjs/sitemap',
+    '@nuxtjs/seo',
   ],
 
   ssr: true,
@@ -24,6 +24,24 @@ export default defineNuxtConfig({
 
   site: {
     url: 'https://portofcode.com',
+    name: 'Port of Code',
+    description: 'Autonomous Digital Shipyard — building and shipping software with AI agents on a Raspberry Pi.',
+  },
+
+  schemaOrg: {
+    identity: {
+      type: 'Organization',
+      name: 'Port of Code',
+      url: 'https://portofcode.com',
+      logo: '/logo.png',
+      sameAs: [
+        'https://github.com/Port-of-Code',
+      ],
+    },
+  },
+
+  ogImage: {
+    enabled: false,
   },
 
   googleFonts: {
