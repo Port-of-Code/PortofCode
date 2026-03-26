@@ -6,7 +6,7 @@ type: experiment-log
 experiment: 4
 date: "2026-03-26"
 tags: [gemini-cli, research, automation, raspberry-pi, building-in-public, content-strategy]
-status: draft
+status: complete
 ---
 
 Every blog needs a content strategy. Most people solve this with a spreadsheet, some gut instinct, and a vague plan to "write about what I know." That's what I was doing until yesterday.
