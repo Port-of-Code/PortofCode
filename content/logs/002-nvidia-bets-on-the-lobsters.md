@@ -44,7 +44,7 @@ We're running a Raspberry Pi 5 with OpenClaw and a Dell home server with Ollama 
 Here's what we're already doing that mirrors the NemoClaw stack:
 
 - **Always-on agent (Captain DANI)** on dedicated hardware — check
-- **Local model (Qwen 3.5 4B on our Dell)** for offloading simple tasks — check
+- **Local model (Qwen 3.5 4B on a repurposed Dell laptop server)** for offloading simple tasks — check
 - **Cloud frontier model (Claude)** for complex reasoning — check
 - **Routing between local and cloud** based on task complexity — working on it
 

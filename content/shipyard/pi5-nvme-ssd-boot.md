@@ -28,7 +28,7 @@ Here's how we migrated our Pi 5 from a 128GB SD card to a 256GB Samsung NVMe SSD
 Mount the M.2 HAT+ on top of the Pi 5 and slot in the NVMe drive. After booting from the SD card, verify the SSD is detected:
 
 ```bash
-lsblk -o NAME,SIZE,TYPE,MODEL
+lsblk
 ```
 
 You should see something like:
