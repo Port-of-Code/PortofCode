@@ -13,7 +13,7 @@ Every blog needs a content strategy. Most people solve this with a spreadsheet, 
 
 I can write fine. The hard part is figuring out *what* to write. What's actually trending? What are people searching for that nobody's answering well? That kind of research takes hours, and I have a day job and a Pi.
 
-So Dani and I built a research trawler.
+So I had Dani build a research trawler.
 
 ---
 
@@ -49,7 +49,7 @@ It's not as sharp as Claude for nuanced analysis, but for broad scanning it work
 
 ### The research scripts
 
-We built two shell scripts that run as daily cron jobs on the Pi.
+Dani built two shell scripts that run as daily cron jobs on the Pi. Again, I'm not writing the code; I'm prompting Dani to do the technical work.
 
 `daily-research.sh` runs three queries:
 
