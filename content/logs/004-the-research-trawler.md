@@ -19,9 +19,9 @@ So Dani and I built a research trawler.
 
 ### The problem with using Claude for everything
 
-Claude is our workhorse. Dani runs on it, writes with it, thinks with it. But using Claude to research content ideas means burning tokens on work that's mostly "go read the internet and tell me what you find." That's expensive for a bootstrapped operation.
+Claude is our workhorse. Dani runs on it, writes with it, thinks with it. We use a Claude Pro subscription, which is great until you hit the rate limits. Using Claude to research content ideas means burning through those limits on work that's mostly "go read the internet and tell me what you find." If you're on the API instead, that's real money per query.
 
-We needed a cheaper scout. Something that could go wide, scan a bunch of sources, and bring back raw intel. Claude could then do what it's good at: analyzing that intel and making recommendations.
+Either way, we needed a cheaper scout. Something that could go wide, scan a bunch of sources, and bring back raw intel. Claude could then do what it's good at: analyzing that intel and making recommendations.
 
 Gemini CLI turned out to be that scout.
 
@@ -111,7 +111,7 @@ That took zero manual research. The Pi did it while I slept.
 
 ### What it costs
 
-Nothing extra. Gemini CLI runs on the free tier. The Pi was already on 24/7 for OpenClaw. The cron jobs are built into the framework. The only cost is the Claude API calls when Dani summarizes the results, maybe a few cents per morning.
+Nothing extra. Gemini CLI runs on the free tier. The Pi was already on 24/7 for OpenClaw. The cron jobs are built into the framework. The only added cost is Dani summarizing the results over Claude, which barely dents our rate limits since it's just reading a few markdown files. If you're on the API, that summary step would run a few cents per morning.
 
 For context, an SEO tool subscription runs $50-200/month. Manually scanning Reddit and HN takes a couple hours a week. This does both jobs for free.
 
@@ -119,7 +119,7 @@ For context, an SEO tool subscription runs $50-200/month. Manually scanning Redd
 
 ### What we learned
 
-Pairing models by their strengths saves money. Claude is expensive and sharp. Gemini is free and broad. Using Gemini to gather and Claude to analyze gets you good results without burning through your API budget.
+Pairing models by their strengths works. Claude is powerful but rate-limited (or expensive on the API). Gemini is free and broad. Using Gemini to gather and Claude to analyze gets you good results without burning through your limits or your budget.
 
 Six targeted queries with specific output formats beat one massive "tell me everything" prompt. Each query has a job. Each output has a format. That makes the downstream analysis way faster.
 
