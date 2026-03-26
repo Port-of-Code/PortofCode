@@ -11,27 +11,27 @@ status: draft
 
 Every blog needs a content strategy. Most people solve this with a spreadsheet, some gut instinct, and a vague plan to "write about what I know." That's what I was doing until yesterday.
 
-The problem isn't writing — it's knowing *what* to write. What's trending in our niche? What questions are people asking? What topics have low competition but high interest? Figuring that out manually takes hours, and I don't have hours. I have a day job and a Pi.
+I can write fine. The hard part is figuring out *what* to write. What's actually trending? What are people searching for that nobody's answering well? That kind of research takes hours, and I have a day job and a Pi.
 
 So Dani and I built a research deck.
 
 ---
 
-### The Problem with Using Claude for Everything
+### The problem with using Claude for everything
 
-Claude is our workhorse. Dani runs on it, writes with it, thinks with it. But using Claude to research content ideas means burning tokens on work that's mostly "go read the internet and tell me what you find." That's expensive exploration for a bootstrapped operation.
+Claude is our workhorse. Dani runs on it, writes with it, thinks with it. But using Claude to research content ideas means burning tokens on work that's mostly "go read the internet and tell me what you find." That's expensive for a bootstrapped operation.
 
-What we needed was a cheaper scout — something that could go wide, scan the landscape, and bring back raw intel. Claude could then do what it's actually good at: analyzing that intel, spotting patterns, and making recommendations.
+We needed a cheaper scout. Something that could go wide, scan a bunch of sources, and bring back raw intel. Claude could then do what it's good at: analyzing that intel and making recommendations.
 
-Enter Gemini CLI.
+Gemini CLI turned out to be that scout.
 
 ---
 
-### Gemini CLI: The Free Research Scout
+### Gemini CLI
 
-Google's [Gemini CLI](https://github.com/google-gemini/gemini-cli) dropped recently and it's exactly what we needed. It's a command-line tool that gives you access to Gemini's models. The free tier gets you 1,000 requests per day and 60 per minute. For research queries, that's more than enough.
+Google's [Gemini CLI](https://github.com/google-gemini/gemini-cli) dropped recently. It's a command line tool that gives you access to Gemini's models, and the free tier gets you 1,000 requests per day and 60 per minute. For research queries, that's plenty.
 
-Installation was straightforward:
+Installation:
 
 ```bash
 npm install -g @google/gemini-cli
@@ -43,31 +43,27 @@ First run walks you through Google auth. After that, you can pipe prompts straig
 gemini -p "What are the trending topics in AI agents this week?"
 ```
 
-It's not as sharp as Claude for nuanced analysis, but for casting a wide net? It's solid. And it's free.
+It's not as sharp as Claude for nuanced analysis, but for broad scanning it works well. And it costs nothing.
 
 ---
 
-### The Research Scripts
+### The research scripts
 
 We built two shell scripts that run as daily cron jobs on the Pi.
 
-**Blog Research** (`daily-research.sh`) runs three queries:
+`daily-research.sh` runs three queries:
 
-1. **Daily Pulse** — What happened in the last 24-48 hours across AI agents, self-hosted AI, OpenClaw, Raspberry Pi, and the indie hacker scene. Quick hits: what happened, why it matters, any blog angles.
+1. Daily pulse, covering the last 24-48 hours across AI agents, self-hosted AI, OpenClaw, Raspberry Pi, and the indie hacker scene
+2. Content opportunities, pulling five fresh topics from Reddit, Hacker News, and Stack Overflow, each tagged with a keyword, timing, suggested angle, and competition level
+3. Everyday AI, a newer addition scanning for questions non-technical users are asking about AI assistants, home automation, and personal productivity
 
-2. **Content Opportunities** — Five fresh topics pulled from Reddit, Hacker News, and Stack Overflow discussions. Each one tagged with a keyword, why it's timely, a suggested angle, and competition level.
+`daily-product-research.sh` runs three more:
 
-3. **Everyday AI** — A newer addition. We're expanding into content for semi-technical and non-technical users, so this query scans for questions regular people are asking about AI assistants, home automation, and personal productivity.
+1. Pain points from developer communities (HN, Reddit, Twitter), assessed for impact and whether a small team could build a solution
+2. Launch analysis of recent successful indie launches on Show HN and Product Hunt
+3. Product gaps, meaning specific software ideas that don't exist yet or exist poorly, each with a revenue model and MVP scope
 
-**Product Research** (`daily-product-research.sh`) runs three more:
-
-1. **Pain Points** — Developer frustrations and complaints from HN, Reddit, and Twitter. Each one assessed for how many people are affected and whether a small team could build a solution.
-
-2. **Launch Analysis** — Recent successful indie launches on Show HN and Product Hunt. What worked, what patterns keep showing up, what we can learn.
-
-3. **Product Gaps** — Specific software ideas that don't exist yet or exist poorly. Each one with a revenue model, build estimate, and MVP scope.
-
-The scripts are simple bash. Here's the structure:
+The scripts are simple bash:
 
 ```bash
 #!/bin/bash
@@ -93,56 +89,52 @@ gemini -p "Another research prompt..." \
   > "${RUN_DIR}/daily-opportunities.md" 2>/dev/null
 ```
 
-Each query saves its output as a markdown file in a date-stamped directory. Clean, organized, and easy to review later.
+Each query saves its output as a markdown file in a date-stamped directory.
 
 ---
 
-### The Cron Schedule
+### The cron schedule
 
-OpenClaw has built-in cron support, so scheduling was a one-liner. The blog research runs at 7:00 AM, product research at 7:30 AM. Both are set to Central time.
+OpenClaw has built-in cron support, so scheduling was a one-liner. Blog research runs at 7:00 AM, product research at 7:30 AM, both Central time.
 
-By the time I'm having my morning coffee, the research is done. I ask Dani for a brief, and I get a summary of everything — notable news, top content opportunities, pain points worth exploring, successful launches to learn from.
+By the time I'm having coffee, the research is done. I ask Dani for a brief and get a summary of everything. Here's what this morning's looked like (the first full run):
 
-Here's what this morning's brief looked like (the first full run):
-
-- GitHub Copilot is changing its training data policy — blog angle on developer privacy
-- Claude Code shipped an autonomous mode — "copilot to autopilot" narrative
-- A solo founder sold his 6-month-old company for $80M — case study material
-- Top content opportunity: multi-agent orchestration patterns (low competition)
-- Top product gap: a semantic business logic linter (clear revenue path)
+- GitHub Copilot is changing its training data policy, possible blog angle on developer privacy
+- Claude Code shipped an autonomous mode, "copilot to autopilot" narrative
+- A solo founder sold his 6-month-old company for $80M, case study material
+- Multi-agent orchestration patterns showing up as a content opportunity (low competition)
+- A semantic business logic linter as a potential product gap (clear revenue path)
 
 That took zero manual research. The Pi did it while I slept.
 
 ---
 
-### What It Costs
+### What it costs
 
-Nothing extra. Gemini CLI runs on the free tier. The Pi was already running 24/7 for OpenClaw. The cron jobs are built into the framework. The only cost is the Claude API calls when Dani summarizes the results, and that's a few cents per morning.
+Nothing extra. Gemini CLI runs on the free tier. The Pi was already on 24/7 for OpenClaw. The cron jobs are built into the framework. The only cost is the Claude API calls when Dani summarizes the results, maybe a few cents per morning.
 
-Compare that to hiring a content strategist, paying for an SEO tool, or spending two hours a week manually scanning Reddit. This setup replaced all of it.
-
----
-
-### What We Learned
-
-**Use the right model for the right job.** Claude is expensive and sharp. Gemini is free and wide. Pairing them — Gemini for gathering, Claude for analysis — gives you the best of both without the cost of either.
-
-**Automate the boring parts.** Research isn't creative work. It's pattern matching across a lot of sources. Computers are better at that than I am, especially at 7 AM.
-
-**Structure beats volume.** Six targeted queries with specific output formats produce better results than one massive "tell me everything" prompt. Each query has a job. Each output has a schema. That makes the downstream analysis faster and more useful.
-
-**Ship it rough, then refine.** The first version of these scripts took about an hour to write. They're not elegant. The prompts could be tighter. But they ran this morning and produced actionable results. We'll iterate.
+For context, an SEO tool subscription runs $50-200/month. Manually scanning Reddit and HN takes a couple hours a week. This does both jobs for free.
 
 ---
 
-### What's Next
+### What we learned
 
-The research pipeline is running. Now we need to close the loop:
+Pairing models by their strengths saves money. Claude is expensive and sharp. Gemini is free and broad. Using Gemini to gather and Claude to analyze gets you good results without burning through your API budget.
 
-- **Topic tracker** — A JSON file that scores and prioritizes topics across runs. Instead of reading raw reports every day, Dani will maintain a ranked backlog of content ideas.
-- **Trend detection** — Comparing today's results to yesterday's. If the same topic shows up three days in a row, it's probably worth writing about.
-- **Everyday AI content** — We just added this research lane. The goal is a new section on the blog aimed at people who want to use AI assistants but aren't developers. Guides that read like a smart home blog, not Hacker News.
+Six targeted queries with specific output formats beat one massive "tell me everything" prompt. Each query has a job. Each output has a format. That makes the downstream analysis way faster.
 
-The research deck is open. Let's see what it finds.
+The first version of these scripts took about an hour to write. They're not elegant. The prompts could be tighter. But they ran this morning and produced results I actually used. We'll iterate.
+
+---
+
+### What's next
+
+The pipeline is running. Now we need to close the loop.
+
+First, a topic tracker. Right now Dani reads raw reports every morning. A scored JSON file that ranks and prioritizes topics across runs would be better. If the same topic shows up three days in a row, it's probably worth writing about.
+
+Second, we just added the "Everyday AI" research lane and want to build a whole blog section around it. Guides aimed at people who want to use AI assistants but aren't developers. More smart home blog, less Hacker News.
+
+We'll see what the deck turns up.
 
 Fair winds. ⚓
