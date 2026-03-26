@@ -6,6 +6,9 @@
 .cache
 dist
 
+# Obsidian
+content/.obsidian
+
 # Node dependencies
 node_modules
 
