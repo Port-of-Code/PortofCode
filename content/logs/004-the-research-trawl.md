@@ -1,5 +1,5 @@
 ---
-title: "Log #004 — The Research Deck"
+title: "Log #004 — The Research Trawl"
 description: "How we built an automated content research pipeline using Gemini CLI, a Raspberry Pi, and zero extra dollars."
 section: logs
 type: experiment-log
@@ -13,7 +13,7 @@ Every blog needs a content strategy. Most people solve this with a spreadsheet, 
 
 I can write fine. The hard part is figuring out *what* to write. What's actually trending? What are people searching for that nobody's answering well? That kind of research takes hours, and I have a day job and a Pi.
 
-So Dani and I built a research deck.
+So Dani and I set up a research trawl.
 
 ---
 
@@ -135,6 +135,6 @@ First, a topic tracker. Right now Dani reads raw reports every morning. A scored
 
 Second, we just added the "Everyday AI" research lane and want to build a whole blog section around it. Guides aimed at people who want to use AI assistants but aren't developers. More smart home blog, less Hacker News.
 
-We'll see what the deck turns up.
+We'll see what the nets drag in.
 
 Fair winds. ⚓
