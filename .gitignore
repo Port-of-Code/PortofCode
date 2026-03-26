@@ -5,6 +5,10 @@
 .nitro
 .cache
 dist
+content/.obsidian
+
+# Obsidian vault
+content/.obsidian
 
 # Obsidian
 content/.obsidian
