@@ -10,6 +10,9 @@ content/.obsidian
 # Obsidian vault
 content/.obsidian
 
+# Obsidian
+content/.obsidian
+
 # Node dependencies
 node_modules
 
