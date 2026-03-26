@@ -6,7 +6,7 @@ type: experiment-log
 experiment: 3
 date: "2026-03-20"
 tags: [captain-log, infrastructure, building-in-public, nvme, ollama, nvidia]
-status: draft
+status: complete
 ---
 
 Port of Code went from idea to operating shipyard in seven days. Here's what happened.

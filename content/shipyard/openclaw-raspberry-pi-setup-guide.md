@@ -5,7 +5,7 @@ section: shipyard
 type: build-guide
 date: "2026-03-24"
 tags: [openclaw, raspberry-pi, ai-agent, self-hosted, tutorial]
-status: draft
+status: complete
 ---
 
 # OpenClaw on Raspberry Pi: The Complete Setup Guide
