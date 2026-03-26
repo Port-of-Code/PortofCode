@@ -1,5 +1,5 @@
 ---
-title: "Log #004 — The Research Trawl"
+title: "Log #004 — The Research Trawler"
 description: "How we built an automated content research pipeline using Gemini CLI, a Raspberry Pi, and zero extra dollars."
 section: logs
 type: experiment-log
@@ -13,7 +13,7 @@ Every blog needs a content strategy. Most people solve this with a spreadsheet, 
 
 I can write fine. The hard part is figuring out *what* to write. What's actually trending? What are people searching for that nobody's answering well? That kind of research takes hours, and I have a day job and a Pi.
 
-So Dani and I set up a research trawl.
+So Dani and I built a research trawler.
 
 ---
 
