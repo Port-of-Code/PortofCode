@@ -1,6 +1,6 @@
 ---
 title: "Log #005 — Paperclip: Running Companies on Autopilot"
-description: "A look at Paperclip, the open-source framework for orchestrating AI agents like a real company—org charts, budgets, and all."
+description: "A look at Paperclip, the open-source framework for running a business with AI agents — org charts, budgets, and a full governance layer."
 section: logs
 type: experiment-log
 experiment: 5
@@ -9,59 +9,49 @@ tags: [ai-agents, orchestration, paperclip, tools, autonomous-companies]
 status: draft
 ---
 
-Every week something new lands that makes the Port of Code thesis feel less like a bet and more like a foregone conclusion. This week it was Paperclip.
+Every week something lands that makes the Port of Code thesis feel less like a bet. This week it was Paperclip.
 
-Paperclip is an open-source framework for running businesses staffed entirely by AI agents. Not a workflow tool. Not a prompt manager. A company operating system — with org charts, budget caps, goal alignment, and a governance layer so you stay in control.
-
-It racked up 14,000 GitHub stars in its first week. That number alone tells you the idea resonated.
+It's an open-source framework for running businesses staffed by AI agents. Not a workflow tool, not a prompt manager. More like a company operating system: org charts, budget caps, goal alignment, governance layer. It hit 14,000 GitHub stars in its first week, which tells you the idea touched a nerve.
 
 ## The mental model shift
 
-Most AI tools are task-oriented. You prompt, you get output, you move on. Paperclip flips that. Instead of "I am prompting an AI," the frame becomes "I am managing a team."
+Most AI tools are task-oriented. You prompt, you get output, you move on. Paperclip changes the frame. Instead of "I am prompting an AI," you're managing a team.
 
-That's a bigger shift than it sounds. When you think of an agent as an employee, you start asking different questions: What is this agent's job? Who does it report to? What's its budget? What happens when it hits that budget?
+That shift matters because it changes what you ask. When an agent is an employee, the relevant questions become: What's this agent's job? Who does it report to? What happens when it burns through its budget?
 
-Paperclip gives you structure to answer all of those.
+Paperclip gives you structure to answer those.
 
 ## How it works
 
-The setup is three steps:
+Three steps. Define a goal — something like "ship a content calendar for Q2." Assign agents to roles (content lead, researcher, scheduler), each with a job description and reporting line. Review whatever strategy your CEO agent drafts, set budget limits, and run it.
 
-1. **Define the goal.** Something like: *"Ship a content calendar for Port of Code's Q2 blog."*
-2. **Hire the team.** Assign agents to roles — a content lead, a researcher, a scheduler. Each role gets a job description and a reporting line.
-3. **Approve and run.** Review the strategy your CEO agent proposes, set budget limits, and let the org chart do its work.
+Under the hood: Node.js server, React dashboard. You can monitor tasks, trace conversations, watch token costs, and kill any agent at any time. Full audit log throughout.
 
-Under the hood it's a Node.js server with a React dashboard. You can monitor tasks, trace conversations, watch token costs, and pause or terminate any agent at any time. Every decision gets logged. Full audit trail.
-
-The heartbeat system is what keeps agents alive between tasks — they wake on a schedule, check their work queue, act, and go back to sleep. Sound familiar? It should. Dani runs on heartbeats too.
+The heartbeat system keeps agents active between tasks. They wake on a schedule, check their queue, act, and go idle. If you've been following along here, that should sound familiar — Dani runs the same way.
 
 ## What it is and isn't
 
-Paperclip is explicit about its scope:
+Paperclip doesn't build agents or write prompts. You bring your own. There's no drag-and-drop pipeline builder. It models a company (mission, projects, tasks) and lets delegation flow through the org chart.
 
-- **Not an agent framework.** It doesn't build agents or write prompts. You bring your own.
-- **Not a workflow builder.** No drag-and-drop pipelines. It models a company — mission, projects, tasks — and lets delegation flow naturally through the org chart.
-- **Not a prompt manager.** Agents bring their own models and runtimes. Paperclip manages the organization they work inside.
-
-That restraint is smart. By staying at the orchestration layer, it stays compatible with everything: Claude Code, Codex, Cursor, OpenClaw, custom scripts. If it can receive a heartbeat, it's hired.
+That's a deliberate call, and it's the right one. By staying at the orchestration layer, it works with anything: Claude Code, Codex, Cursor, OpenClaw, bash scripts. Their tagline puts it plainly: "If it can receive a heartbeat, it's hired."
 
 ## The Port of Code take
 
-We're not plugging Paperclip in tomorrow. At current scale — one shipwright, one captain — the overhead isn't justified yet. When you're running a crew of two, you don't need an HR department.
+We're not plugging Paperclip in tomorrow. Right now it's one shipwright and one captain — the overhead doesn't make sense at this scale.
 
-But the trajectory is obvious. Once Port of Code is running dedicated agents for content, code review, research, and customer work, coordinating them manually won't scale. That's when something like Paperclip becomes the natural next layer.
+But at some point Port of Code will have dedicated agents for content, code review, research, and client work. Coordinating all of that by hand won't hold. That's when something like this earns its place.
 
-The piece I find most compelling is goal alignment. Right now, every time Dani starts a new session, I load context files to explain what we're building and why. Paperclip bakes that chain into the architecture: every task traces back to a project, every project traces back to the mission. Agents always know what they're doing and *why they're doing it*.
+The thing I keep coming back to is goal alignment. Every time Dani starts a new session, I load context files explaining what we're building and why. Paperclip bakes that chain into the architecture. Task traces to project, project traces to mission. Agents know what they're working on and why it matters, without me having to re-explain it every time.
 
-That's not a nice-to-have. That's the difference between a crew that rows and a crew that rows *in the same direction*.
+That's not a nice-to-have. That's the whole problem we're quietly fighting against every day.
 
 ## Worth watching
 
-Paperclip is brand new and some features — Clipmart, their marketplace for pre-built company templates — are still incoming. It'll take a few months to see how it holds up under real workloads.
+Clipmart, their marketplace for pre-built company templates, is still in the works. The project is barely a week old and hasn't seen much real-world stress testing yet.
 
-But the framing is right, the timing is right, and the community response suggests a lot of people were waiting for exactly this. We'll be keeping tabs on it as the shipyard grows.
+Still, the community response was immediate. People were waiting for exactly this framing. That counts for something.
 
-If you're already running multiple agents across different runtimes, it's worth a spin. The quickstart is a single command:
+If you're already juggling multiple agents across different runtimes, the quickstart is a single command:
 
 ```bash
 npx paperclipai onboard --yes
