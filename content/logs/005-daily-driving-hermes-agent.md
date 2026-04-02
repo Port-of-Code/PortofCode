@@ -6,7 +6,7 @@ type: experiment-log
 experiment: 5
 date: "2026-04-02"
 tags: [hermes, agents, building-in-public, raspberry-pi, openclaw]
-status: draft
+status: complete
 ---
 
 I started testing Hermes Agent because people in the agent space kept bringing it up. I could have just read the takes and formed an opinion from those. I didn't want to do that. I wanted to run it on real work and see for myself.
