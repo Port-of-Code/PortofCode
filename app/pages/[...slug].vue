@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { formatContentDate } from '~/utils/date'
+
 const route = useRoute()
 const slug = computed(() => '/' + (Array.isArray(route.params.slug) ? route.params.slug.join('/') : route.params.slug))
 
@@ -50,7 +52,7 @@ useSeoMeta({
       <p v-if="page.description" class="text-lg text-muted mb-4">{{ page.description }}</p>
       <div class="flex flex-wrap items-center gap-4 text-sm text-steel">
         <time v-if="page.date">
-          {{ new Date(page.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) }}
+          {{ formatContentDate(page.date, 'en-US', { year: 'numeric', month: 'long', day: 'numeric' }) }}
         </time>
         <div v-if="page.tags?.length" class="flex flex-wrap gap-2">
           <span v-for="tag in page.tags" :key="tag" class="text-xs bg-darkcard px-2 py-0.5 rounded">#{{ tag }}</span>

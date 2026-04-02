@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { Calendar, Tag } from 'lucide-vue-next'
+import { formatContentDate } from '~/utils/date'
 
 const props = defineProps<{
   title: string
@@ -26,7 +27,7 @@ const statusColors: Record<string, string> = {
 
 const formattedDate = computed(() => {
   if (!props.date) return ''
-  return new Date(props.date).toLocaleDateString('en-US', {
+  return formatContentDate(props.date, 'en-US', {
     year: 'numeric',
     month: 'short',
     day: 'numeric',
