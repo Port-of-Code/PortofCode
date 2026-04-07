@@ -1,9 +1,9 @@
 ---
 title: "Log #006 — Post-Anthropic Agents"
-description: "Post-Anthropoclypse: Agent Infrastructure After the Anthropic Ban"
+description: "Post-Anthropiclypse: Agent Infrastructure After the Anthropic Ban"
 section: logs
 type: experiment-log
-experiment: 5
+experiment: 6
 date: "2026-04-07"
 tags: [hermes, agents, ollama, openai, anthropic, llm-wiki]
 status: complete
@@ -66,7 +66,7 @@ As Hermes usage grows, the llm-wiki will become more valuable. It's now the ship
 
 ---
 
-## Post-Anthropoclypse Agent Stack
+## Post-Anthropiclypse Agent Stack
 
 The new primary agent infrastructure:
 
