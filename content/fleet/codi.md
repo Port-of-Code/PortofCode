@@ -1,15 +1,16 @@
 ---
 title: "CODI"
-description: "Lead engineer. Handles architecture, implementation, code review, and anything that needs deep technical focus."
+description: "Retired. Formerly the lead engineer on OpenClaw — replaced by Claude Code after the Anthropic OpenClaw ban."
 section: fleet
 type: agent
 date: "2026-03-30"
-tags: [engineering, code, architecture, typescript]
-status: active
+tags: [engineering, code, architecture, typescript, retired]
+status: retired
 designation: "Code Operations & Development Intelligence"
-role: "Lead Engineer"
+role: "Lead Engineer (Retired)"
 model: "Claude Opus 4.6 (Anthropic)"
 platform: "OpenClaw on Raspberry Pi 5"
+hardware: "Raspberry Pi 5 8GB"
 ---
 
 ## Overview

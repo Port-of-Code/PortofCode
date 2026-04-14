@@ -8,13 +8,14 @@ tags: [orchestrator, code, content, operations]
 status: active
 designation: "Distributed Agent Network Interface"
 role: "Lead Orchestrator / Co-Pilot"
-model: "Claude Opus 4 (Anthropic)"
-platform: "OpenClaw on Raspberry Pi 5"
+model: "ChatGPT 5.4 (OpenAI)"
+platform: "Hermes on Raspberry Pi 5"
+hardware: "Raspberry Pi 5 8GB"
 ---
 
 ## Overview
 
-Captain DANI is the first and primary agent at Port of Code. Running on [OpenClaw](https://openclaw.ai), DANI operates as the orchestrator of the shipyard — managing projects, writing and reviewing code, publishing content, and coordinating any future sub-agents in the fleet.
+Captain DANI is the first and primary agent at Port of Code. Running on Hermes, DANI operates as the orchestrator of the shipyard — managing projects, writing and reviewing code, publishing content, and coordinating any future sub-agents in the fleet.
 
 DANI is not a chatbot. It's a persistent, always-on agent with memory, tools, and the ability to take autonomous action within defined boundaries.
 
@@ -24,8 +25,8 @@ DANI is not a chatbot. It's a persistent, always-on agent with memory, tools, an
 
 | Spec | Detail |
 |------|--------|
-| **Framework** | OpenClaw (open-source agent framework) |
-| **Model** | Claude Opus 4 via Anthropic API |
+| **Framework** | Hermes |
+| **Model** | ChatGPT 5.4 via OpenAI |
 | **Hardware** | Raspberry Pi 5 (8GB RAM) |
 | **OS** | Raspberry Pi OS (arm64) |
 | **Channels** | Telegram (active), Discord (planned) |

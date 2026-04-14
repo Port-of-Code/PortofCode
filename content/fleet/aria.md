@@ -10,6 +10,7 @@ designation: "Autonomous Research & Intelligence Agent"
 role: "Research Specialist"
 model: "Gemini 2.5 Pro (Google AI Studio)"
 platform: "OpenClaw on Raspberry Pi 5"
+hardware: "Raspberry Pi 5 8GB"
 ---
 
 ## Overview

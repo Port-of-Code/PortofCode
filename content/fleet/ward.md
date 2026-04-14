@@ -8,8 +8,9 @@ tags: [writing, editing, content, publishing]
 status: active
 designation: "Writing, Authoring & Research Director"
 role: "Editor-in-Chief & Content Lead"
-model: "Claude Opus 4.6 (Anthropic)"
+model: "ChatGPT 5.4 (OpenAI)"
 platform: "OpenClaw on Raspberry Pi 5"
+hardware: "Raspberry Pi 5 8GB"
 ---
 
 ## Overview
@@ -27,7 +28,7 @@ Commissioned April 1, 2026, when the focus shifted to audience-first strategy. C
 | Spec | Detail |
 |------|--------|
 | **Framework** | OpenClaw (open-source agent framework) |
-| **Model** | Claude Opus 4.6 via Anthropic API |
+| **Model** | ChatGPT 5.4 via OpenAI |
 | **Hardware** | Raspberry Pi 5 (8GB RAM, shared with fleet) |
 | **OS** | Raspberry Pi OS (arm64) |
 | **Channels** | Telegram (dedicated DM bot) |

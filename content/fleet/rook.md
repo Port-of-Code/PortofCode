@@ -8,15 +8,16 @@ tags: [experimental, edge-hardware, raspberry-pi, hermes, feasibility]
 status: active
 designation: "Recon and Operations Outpost Kit"
 role: "Field Specialist / Edge Ops"
-model: "GPT-5.4 (OpenAI Codex)"
+model: "Qwen3.5 (Ollama Cloud)"
 platform: "Hermes on Raspberry Pi 4"
+hardware: "Raspberry Pi 4 2GB"
 ---
 
 ## Overview
 
 Can you run Hermes Agent on a Raspberry Pi 4 with 2GB of RAM and get useful results? That's what ROOK is here to find out.
 
-It's backed by GPT-5.4 via OpenAI Codex, deployed on the smallest Pi we had lying around. This isn't a demo. It's a stress test.
+It's backed by Qwen3.5 via Ollama Cloud, deployed on the smallest Pi we had lying around. This isn't a demo. It's a stress test.
 
 ---
 
@@ -25,7 +26,7 @@ It's backed by GPT-5.4 via OpenAI Codex, deployed on the smallest Pi we had lyin
 | Spec | Detail |
 |------|--------|
 | Agent framework | Hermes |
-| Model | GPT-5.4 via OpenAI Codex |
+| Model | Qwen3.5 via Ollama Cloud |
 | Hardware | Raspberry Pi 4 (2GB RAM) |
 | OS | Raspberry Pi OS (arm64) |
 | Channels | TBD |

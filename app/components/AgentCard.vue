@@ -17,6 +17,7 @@ const statusColors: Record<string, string> = {
   active: 'bg-cyan/10 text-cyan border-cyan/30',
   standby: 'bg-orange/10 text-orange border-orange/30',
   offline: 'bg-steel/10 text-steel border-steel/30',
+  retired: 'bg-rust/10 text-rust border-rust/30',
 }
 </script>
 
