@@ -6,7 +6,7 @@ const { data: logs } = await useAsyncData('logs-posts', () =>
 )
 
 useSeoMeta({
-  title: 'Experiment Logs | Port of Code',
+  title: 'Experiment Logs',
   description: 'Chronological documentation of every experiment run at the lab.',
   ogTitle: 'Experiment Logs | Port of Code',
   ogDescription: 'Chronological documentation of every experiment run at the lab.',

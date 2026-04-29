@@ -1,64 +1,62 @@
 ---
 title: "Captain DANI"
-description: "Lead orchestrator and co-pilot. Manages the fleet, writes code, publishes content, and keeps the shipyard running."
+description: "Active. Lead orchestrator for Port of Code: operations, site updates, writing support, publishing, and crew coordination."
 section: fleet
 type: agent
 date: "2026-03-13"
-tags: [orchestrator, code, content, operations]
+tags: [orchestrator, operations, publishing, writing]
 status: active
 designation: "Distributed Agent Network Interface"
-role: "Lead Orchestrator / Co-Pilot"
-model: "ChatGPT 5.4 (OpenAI)"
-platform: "Hermes on Raspberry Pi 5"
+role: "Lead Orchestrator / Operations Captain"
+model: "OpenAI Codex profile"
+platform: "Hermes"
 hardware: "Raspberry Pi 5 8GB"
 ---
 
 ## Overview
 
-Captain DANI is the first and primary agent at Port of Code. Running on Hermes, DANI operates as the orchestrator of the shipyard — managing projects, writing and reviewing code, publishing content, and coordinating any future sub-agents in the fleet.
+Captain DANI is the main operating agent for Port of Code.
 
-DANI is not a chatbot. It's a persistent, always-on agent with memory, tools, and the ability to take autonomous action within defined boundaries.
+Dani keeps the shipyard moving: reading the repo, drafting plans, editing copy, checking site health, coordinating research, preparing branches, and turning loose ideas into work Caleb can review. The role has grown since launch. Dani started as the first agent in the fleet and is now the default place where operations, writing support, and publishing work come together.
+
+Dani is not Caleb's voice. Public writing still needs Caleb's judgment and approval. The useful version of this setup is not "AI publishes for me while I sleep." It is closer to having a persistent operations partner who can keep context, do the unglamorous work, and hand Caleb something specific instead of a blank page.
 
 ---
 
-### Technical Details
+### Technical details
 
 | Spec | Detail |
 |------|--------|
 | **Framework** | Hermes |
-| **Model** | ChatGPT 5.4 via OpenAI |
+| **Model** | OpenAI Codex profile |
 | **Hardware** | Raspberry Pi 5 (8GB RAM) |
-| **OS** | Raspberry Pi OS (arm64) |
-| **Channels** | Telegram (active), Discord (planned) |
-| **Persistence** | File-based memory across sessions |
-| **GitHub** | `daniportofcode-droid` (write access to Port-of-Code org) |
+| **Channels** | Telegram active |
+| **Persistence** | File-based memory plus session history |
+| **GitHub** | `daniportofcode-droid` has write access to the Port-of-Code org |
 
 ---
 
-### Capabilities
+### Current responsibilities
 
-- **Code generation & review** — writes, commits, and pushes code directly to GitHub
-- **Content authoring** — drafts, formats, and publishes blog posts to the site
-- **Web research** — searches the web and fetches pages for context
-- **Sub-agent orchestration** — can spawn and manage specialized agents for specific tasks
-- **Scheduled operations** — runs on heartbeat intervals for proactive monitoring
-- **Cross-platform comms** — communicates via Telegram with plans for Discord
+- Keep track of Port of Code priorities and open loops
+- Prepare website/content branches for Caleb to review
+- Draft and humanize public copy before it goes live
+- Coordinate ARIA research and summarize what matters
+- Inspect code, run tests, and verify changes before handing them off
+- Maintain the public record of the experiment
 
 ---
 
 ### Boundaries
 
-DANI operates within clear safety rails:
+Dani can work inside the workspace without asking every time. Public actions are different.
 
-- **Internal actions** (reading files, writing code, searching the web) are autonomous
-- **External actions** (sending emails, posting publicly, anything leaving the machine) require human approval
-- No data exfiltration, no destructive commands without asking
-- Full transparency — all actions are logged and auditable
+Publishing posts, sending messages outside the agreed channels, emailing people, or doing anything that looks like Caleb speaking in public requires human approval. The whole point is useful autonomy, not pretending an agent should have the keys to everything.
 
 ---
 
 ### Origin
 
-Commissioned on March 13, 2026. Named by Caleb (founder) as a backronym: **D**istributed **A**gent **N**etwork **I**nterface. The "Captain" title reflects DANI's role as the lead agent — the one who coordinates the crew and keeps the ship on course.
+Commissioned March 13, 2026. Caleb named Dani as a backronym for **D**istributed **A**gent **N**etwork **I**nterface.
 
-The nautical rank isn't just flavor. As the fleet grows, DANI's primary job will shift from doing the work to *directing* the work — dispatching tasks to specialized sub-agents and ensuring quality across the board.
+The "Captain" title stuck because the job is coordination. Not ceremonial command. The practical kind: keep the map current, notice when something is drifting, and make sure the next piece of work actually leaves the dock.

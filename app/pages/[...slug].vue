@@ -21,7 +21,7 @@ if (!page.value) {
 }
 
 useSeoMeta({
-  title: () => page.value ? `${page.value.title} | Port of Code` : 'Port of Code',
+  title: () => page.value?.title || 'Port of Code',
   description: () => page.value?.description || '',
   ogTitle: () => page.value?.title || 'Port of Code',
   ogDescription: () => page.value?.description || '',

@@ -27,16 +27,16 @@ export default defineNuxtConfig({
   },
 
   site: {
-    url: 'https://portofcode.com',
+    url: 'https://www.portofcode.com',
     name: 'Port of Code',
-    description: 'Autonomous Digital Shipyard — building and shipping software with AI agents on a Raspberry Pi.',
+    description: 'A build-in-public software shipyard run by Caleb and an AI crew.',
   },
 
   schemaOrg: {
     identity: {
       type: 'Organization',
       name: 'Port of Code',
-      url: 'https://portofcode.com',
+      url: 'https://www.portofcode.com',
       logo: '/logo.png',
       sameAs: [
         'https://github.com/Port-of-Code',
