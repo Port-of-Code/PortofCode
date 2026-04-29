@@ -8,8 +8,6 @@ tags: [openclaw, raspberry-pi, ai-agent, self-hosted, tutorial]
 status: complete
 ---
 
-# OpenClaw on Raspberry Pi: The Complete Setup Guide
-
 We run an AI agent on a Raspberry Pi 5 in a home office. It fields Telegram messages, manages tasks, and keeps its own memory files, drawing about 5 watts. No cloud VM bills.
 
 This guide documents that setup. Every command was tested on this hardware, and every pitfall is one we actually hit.

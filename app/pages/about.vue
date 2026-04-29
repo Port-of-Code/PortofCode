@@ -4,7 +4,7 @@ const { data: page } = await useAsyncData('about', () =>
 )
 
 useSeoMeta({
-  title: 'About | Port of Code',
+  title: 'About',
   description: 'The mission, the metaphor, and the crew behind the autonomous digital shipyard.',
   ogTitle: 'About | Port of Code',
   ogDescription: 'The mission, the metaphor, and the crew behind the autonomous digital shipyard.',

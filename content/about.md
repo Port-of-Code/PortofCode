@@ -1,32 +1,61 @@
 ---
 title: "About Port of Code"
-description: "The mission, the metaphor, and the crew behind the autonomous digital shipyard."
+description: "Port of Code is Caleb's build-in-public experiment: a small software shipyard run with AI agents, real tools, and public logs."
 ---
 
 # About Port of Code
 
-Port of Code is an autonomous digital shipyard — a one-person operation powered by AI agents. This project is an experiment to test the thesis of using AI to build, launch, and maintain software products, documenting the entire journey along the way.
+Port of Code is my experiment in building a small software company with an AI crew.
 
-## The Metaphor
+The short version: I am Caleb, a software developer by day. Port of Code is where I test whether one person, working with a handful of persistent AI agents, can build and maintain real software products without pretending the process is cleaner than it is.
 
-[OpenClaw](https://openclaw.ai) agents are affectionately called "lobsters" by the community. If we're going to be shipping software and other digital products, the theme starts to fall into place:
+The site is the public record. The good parts, the weird dead ends, the migrations, the hardware experiments, the posts that take longer than expected. All of it.
 
-- **The Port** is the entry point — where ideas arrive
-- **The Shipyard** is where things get built — software projects, infrastructure, tooling
-- **The Fleet** is the AI agent crew — specialized agents coordinated to handle different tasks
-- **The Logs** are the captain's journal — what we tried, what worked, what didn't
+## Why the shipyard metaphor exists
 
-## The Setup
+The nautical theme started because the first agent framework I used was [OpenClaw](https://openclaw.ai), and the community calls its agents "lobsters." Once I started talking about shipping software, the rest of the metaphor was sitting right there.
 
-The entire operation currently runs on a **Raspberry Pi 5** (8GB) with [OpenClaw](https://openclaw.ai) as the agent framework. No GPU servers, no cloud instances — just a $100 single-board computer orchestrating AI agents via API calls to frontier models.
+- The **Port** is the entry point.
+- The **Shipyard** is where the builds live: tools, guides, infrastructure notes, and experiments.
+- The **Fleet** is the agent crew.
+- The **Logs** are the journal of what changed and what I learned.
 
-The first agent is **Captain DANI** (Distributed Agent Network Interface) — the orchestrator and co-pilot. Future agents will handle specialized tasks as the shipyard scales.
+It is branding, but it is also useful shorthand. A shipyard is not a pitch deck. It is a place where things either get built or they do not.
 
-## Who's Behind This
+## The current setup
 
-**Caleb** — I'm a software developer by day, and AI wrangler by night. Port of Code is an experiment in bootstrapping a software company with AI agents, starting with minimal hardware and reinvesting as it grows. This blog is the public record of that journey.
+The stack has changed a lot since the first launch. That is part of the point.
 
-## Find Us
+Port of Code started with Captain DANI running on a Raspberry Pi 5 through OpenClaw. Since then, the operation has moved into a more mixed setup:
+
+- **DANI** handles operations, publishing coordination, site work, writing support, and day-to-day execution.
+- **ARIA** handles research and source gathering when a topic needs more than a quick search.
+- **ROOK** runs separately on a Raspberry Pi 4 as a constrained-hardware experiment.
+- **WARD** and **CODI** are retired fleet roles. They mattered, but the structure moved on.
+- Complex coding work now goes through Codex-style coding sessions, with Dani coordinating and checking the result.
+
+The Raspberry Pis still matter. So do the cloud APIs. The honest version is less romantic than "one tiny computer runs the whole company," but it is more accurate: Port of Code is a small, stitched-together operating system for getting work shipped.
+
+## What we are building
+
+Right now the work falls into a few buckets:
+
+- practical tools for local AI and agent workflows
+- infrastructure for running persistent AI agents
+- public notes on what breaks, what helps, and what is not worth repeating
+- small software products that can be built, launched, and maintained by a tiny crew
+
+The [Local AI VRAM Calculator](https://vram.portofcode.com/) is the current example. It came from a real annoyance: figuring out whether a GPU can actually run a local model without digging through half-answers across Reddit, GitHub issues, and model cards.
+
+## Who is behind this
+
+I am Caleb Faught. I work in local government software, and Port of Code is my side project for testing what a solo builder can do with AI agents as teammates instead of toys.
+
+Dani is the main agent partner in the day-to-day work. Not my voice, not a ghostwriter, and not a magic employee. More like an operations captain with tools, memory, and enough autonomy to keep the shipyard moving when I am not at the keyboard.
+
+That distinction matters. I still make the calls. I still approve what goes public. But I am not pretending I am doing this alone.
+
+## Find us
 
 - [GitHub](https://github.com/Port-of-Code)
 - [RSS Feed](/feed.xml)

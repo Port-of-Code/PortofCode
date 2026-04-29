@@ -1,5 +1,5 @@
 export default defineEventHandler(async (event) => {
-  const siteUrl = 'https://portofcode.com'
+  const siteUrl = 'https://www.portofcode.com'
 
   const [shipyardPosts, fleetPosts, logPosts] = await Promise.all([
     queryCollection(event, 'shipyard').order('date', 'DESC').all(),
